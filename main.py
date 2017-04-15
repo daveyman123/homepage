@@ -1,6 +1,8 @@
 import re
 import cgi
 import webapp2
+import jinja2
+from google.appengine.ext import db
 
 # html boilerplate for the top of every page
 page_header = """
