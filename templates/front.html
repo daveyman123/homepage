@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+</ul>
+
+<form  action = "/add" method="post">
+    <label>
+
+        <div>subject</div>
+        <input type="text" name="subject" value = {{stuff}}>
+    </label>
+        <label>
+          <div>body</div>
+
+        <input type="text" name="body" value = {{stuff2}}>
+      </label>
+    <label>
+    <input type="submit" value="Post it"/>
+  </label>
+</form>
+
+
+
+<ul>
+
+{% for posts in title %}
+    <li>
+        <form action="/blog/{{ posts.key().id() }}" method="post">
+            {% if posts.title != "" and posts.body != "" %}
+              {{ posts.title }}
+              {{ posts.body }}
+            {% endif %}
+
+            <input type="hidden" name="clicked_view" value="{{ posts.key().id() }}"/>
+            <input type="submit" value="View It" />
+        </form>
+    </li>
+{% endfor %}
+</ul>
+<p class="error">{{ error1 if error1 else "" }}</p>
+<p class="error">{{ error2 if error2 else "" }}</p>
+{% endblock %}

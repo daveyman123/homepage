@@ -1,6 +1,7 @@
 import re
 import cgi
 import webapp2
+import main2
 # html boilerplate for the top of every page
 page_header = """
 <!DOCTYPE html>
@@ -101,5 +102,6 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(content)
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/blog', main2.MainHandler)
 ], debug=True)
