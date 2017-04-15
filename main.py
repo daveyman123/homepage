@@ -89,6 +89,9 @@ add_form = """
             src="https://lh4.googleusercontent.com/proxy/t0wTtFwxC_TxZVpJ3VWfz8fQ-GKUH9daYiSxjrcMQHQtMWZK8qvrn3Qo0DdumRYFEawlwIT0a41gCgmWqdXrfW13flFaznIkopLmd-zzfC7pOUGSzyPV3aDKhB2Kw3GQzYD5kKuNjRwX=w175-h175-nc" />
         </a>
     </label>
+    <label>
+	<a href="/blog">blog</a>
+    </lable>
 </form>
 """
 class MainHandler(webapp2.RequestHandler):
